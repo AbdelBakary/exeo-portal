@@ -44,12 +44,12 @@ RUN mkdir -p /app/logs
 # Collect static files
 RUN python manage.py collectstatic --noinput
 
-# Expose port
-EXPOSE 8000
+# Expose port (Railway will set the actual port)
+EXPOSE $PORT
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 \
-    CMD curl -f http://localhost:8000/health/ || exit 1
+    CMD curl -f http://localhost:${PORT:-8000}/health/ || exit 1
 
 # Run the application
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "--workers", "3", "exeo_portal.wsgi:application"]
+CMD gunicorn --bind 0.0.0.0:${PORT:-8000} --workers 3 exeo_portal.wsgi:application
