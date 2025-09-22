@@ -1,0 +1,76 @@
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo-container.small {
+  gap: 6px;
+}
+
+.exeo-logo {
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.logo-container.small .exeo-logo {
+  height: 24px;
+  width: auto;
+}
+
+.logo-container.medium .exeo-logo {
+  height: 32px;
+  width: auto;
+}
+
+.logo-container.large .exeo-logo {
+  height: 40px;
+  width: auto;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.logo-primary {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1A3D6D;
+  letter-spacing: -0.5px;
+}
+
+.logo-secondary {
+  font-size: 12px;
+  font-weight: 500;
+  color: #666;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.logo-simple {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1A3D6D;
+  letter-spacing: 0.5px;
+}
+
+.logo-container.small .logo-primary {
+  font-size: 16px;
+}
+
+.logo-container.small .logo-secondary {
+  font-size: 10px;
+}
+
+.logo-container.large .logo-primary {
+  font-size: 24px;
+}
+
+.logo-container.large .logo-secondary {
+  font-size: 14px;
+}

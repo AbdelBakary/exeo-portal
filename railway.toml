@@ -1,0 +1,14 @@
+[build]
+builder = "dockerfile"
+dockerfilePath = "Dockerfile"
+
+[deploy]
+startCommand = "gunicorn --bind 0.0.0.0:$PORT --workers 3 exeo_portal.wsgi:application"
+healthcheckPath = "/health/"
+healthcheckTimeout = 100
+restartPolicyType = "on_failure"
+
+[env]
+DEBUG = "False"
+SECRET_KEY = "your-production-secret-key-change-this"
+JWT_SECRET_KEY = "your-production-jwt-secret-key-change-this"
