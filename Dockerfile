@@ -1,6 +1,9 @@
 # Test Dockerfile pour Railway
 FROM python:3.11-slim
 
+# Installer curl pour health check
+RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
+
 WORKDIR /app
 
 # Copier l'application de test

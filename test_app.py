@@ -22,8 +22,8 @@ class TestHandler(BaseHTTPRequestHandler):
             <html>
             <head><title>EXEO Portal - Test</title></head>
             <body>
-                <h1>🚀 EXEO Portal est en ligne !</h1>
-                <p>Application de test déployée avec succès sur Railway</p>
+            <h1>🚀 EXEO Portal v2 est en ligne !</h1>
+            <p>Application de test déployée avec succès sur Railway (version corrigée)</p>
                 <p>Port: {}</p>
                 <p>Status: ✅ Fonctionnel</p>
             </body>
