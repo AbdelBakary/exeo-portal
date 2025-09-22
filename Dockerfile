@@ -1,4 +1,4 @@
-# Test Dockerfile pour Railway
+# Test Dockerfile pour Railway - Version 3 (22/09/2025 12:15)
 FROM python:3.11-slim
 
 # Installer curl pour health check
