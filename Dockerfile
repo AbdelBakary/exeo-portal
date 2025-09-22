@@ -26,6 +26,10 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy project
 COPY . /app/
 
+# Copy and set permissions for start script
+COPY start.sh /app/start.sh
+RUN chmod +x /app/start.sh
+
 # Create directories for logs and media
 RUN mkdir -p /app/logs /app/media /app/staticfiles
 
@@ -50,10 +54,6 @@ EXPOSE $PORT
 # Health check
 HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 \
     CMD curl -f http://localhost:8000/health/ || exit 1
-
-# Copy start script
-COPY start.sh /app/start.sh
-RUN chmod +x /app/start.sh
 
 # Run the application
 CMD ["/app/start.sh"]
