@@ -1,0 +1,12 @@
+venv/
+__pycache__/
+*.pyc
+.env
+.git/
+node_modules/
+media/
+staticfiles/
+logs/
+db.sqlite3
+Dockerfile.django
+*.log
