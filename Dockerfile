@@ -49,7 +49,11 @@ EXPOSE $PORT
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 \
-    CMD curl -f http://localhost:${PORT:-8000}/health/ || exit 1
+    CMD curl -f http://localhost:8000/health/ || exit 1
+
+# Copy start script
+COPY start.sh /app/start.sh
+RUN chmod +x /app/start.sh
 
 # Run the application
-CMD gunicorn --bind 0.0.0.0:${PORT:-8000} --workers 3 exeo_portal.wsgi:application
+CMD ["/app/start.sh"]
